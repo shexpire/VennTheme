@@ -145,8 +145,11 @@
       </div>
       <div class="card__content">
         <div class="card__information">
+          {% if card_product.metafields.custom.subtitle %}
+          <div class="card__subheading">{{ card_product.metafields.custom.subtitle }}</div>
+          {% endif %}
           <h3
-            class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+            class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h4{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
               id="title-{{ section_id }}-{{ card_product.id }}"
             {% endif %}
@@ -158,6 +161,12 @@
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
               {{ card_product.title | escape }}
+              <span class="button button--secondary color-scheme-3">
+              <span>{{ 'products.product.view_product' | t }}</span>
+              <span class="icon-wrap">
+              {{- 'icon-arrow.svg' | inline_asset_content -}}
+              </span>
+            </span>
             </a>
           </h3>
           <div class="card-information">

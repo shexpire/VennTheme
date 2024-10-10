@@ -267,6 +267,8 @@
   .card__information {
     padding-bottom: 1.7rem;
     padding-top: 1.7rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
   }
 }
 
@@ -495,7 +497,7 @@
 }
 
 .card-information > *:not(.visually-hidden:first-child) + *:not(.rating):not(.card__information-volume-pricing-note) {
-  margin-top: 0.7rem;
+  margin-top: 0;
 }
 
 .card-information .caption {
@@ -592,4 +594,35 @@
   .grid__item:nth-child(8n) .product-card-wrapper:hover .shape--blob {
     clip-path: polygon(var(--shape--blob-5));
   }
+}
+
+/*custom code */
+.card__subheading {
+  font-size: 1.6rem;
+  font-weight: 400;
+  grid-area: 1 / 1 / 2 / 3;
+}
+.card__heading a:after {
+  backdrop-filter: blur(0);
+  transition: backdrop-filter 0.2s;
+  border-radius: var(--product-card-corner-radius);
+}
+.card__heading a:hover:after {
+  background: rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(50px);
+}
+.card__heading a span.button {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 2;
+}
+.card__heading a:hover span.button {
+  --alpha-button-background: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
 }

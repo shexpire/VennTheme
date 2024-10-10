@@ -5,6 +5,10 @@
 		assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
 		assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
 	%}
+{% else %}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..700&display=swap" rel="stylesheet">
 {%- endunless -%}
 
 {% style %}
@@ -235,6 +239,3 @@
 	{%- endunless -%}
 {%- endunless -%}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..700&display=swap" rel="stylesheet">
