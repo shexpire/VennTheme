@@ -136,7 +136,7 @@
 
 .card__information {
   grid-row-start: 2;
-  padding: 1.3rem 1rem;
+  padding: 1.3rem 1.4rem;
 }
 
 .card:not(.ratio) > .card__content {
@@ -597,21 +597,21 @@
 }
 
 /*custom code */
-.card__subheading {
+.product-card-wrapper .card__subheading {
   font-size: 1.6rem;
   font-weight: 400;
   grid-area: 1 / 1 / 2 / 3;
 }
-.card__heading a:after {
+.product-card-wrapper .card__heading a:after {
   backdrop-filter: blur(0);
   transition: backdrop-filter 0.2s;
   border-radius: var(--product-card-corner-radius);
 }
-.card__heading a:hover:after {
+.product-card-wrapper .card__heading a:hover:after {
   background: rgba(0, 0, 0, 0.10);
   backdrop-filter: blur(50px);
 }
-.card__heading a span.button {
+.product-card-wrapper .card__heading a span.button {
   display: none;
   position: absolute;
   top: 50%;
@@ -619,10 +619,12 @@
   translate: -50% -50%;
   z-index: 2;
 }
-.card__heading a:hover span.button {
+.product-card-wrapper .card__heading a:hover span.button {
   --alpha-button-background: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   line-height: 1;
+  font-weight: 500;
+  min-width: 196px;
 }

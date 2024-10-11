@@ -2255,6 +2255,18 @@
               },
               "options__44": {
                 "label": "Washing"
+              },
+              "options__45": {
+                "label": "Customer Service"
+              },
+              "options__46": {
+                "label": "Free Shipping"
+              },
+              "options__47": {
+                "label": "Refer Fiend"
+              },
+              "options__48": {
+                "label": "Secure Payment"
               }
             }
           }
@@ -2604,6 +2616,9 @@
         },
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
+        },
+        "enable_borders": {
+          "label": "Enable borders"
         }
       },
       "blocks": {
@@ -2612,6 +2627,9 @@
           "settings": {
             "image": {
               "label": "Image"
+            },
+            "icon": {
+              "label": "Icon"
             },
             "title": {
               "label": "Heading",

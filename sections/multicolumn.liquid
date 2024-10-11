@@ -23,7 +23,7 @@
   endif
 -%}
 
-<div class="multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+<div class="multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.enable_borders %} with-borders{% endif %}">
   <div
     class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
@@ -118,9 +118,14 @@
                   </div>
                 </div>
               {%- endif -%}
+              {% if block.settings.icon %}
+              <div class="multicolumn-card__icon-wrapper">
+                {% render 'icon-accordion', icon: block.settings.icon -%}
+              </div>
+              {% endif %}
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">{{ block.settings.title }}</h3>
+                  <h3 class="inline-richtext h4">{{ block.settings.title }}</h3>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
@@ -336,6 +341,12 @@
       "default": "scheme-1"
     },
     {
+      "type": "checkbox",
+      "id": "enable_borders",
+      "default": false,
+      "label": "t:sections.multicolumn.settings.enable_borders.label"
+    },
+    {
       "type": "header",
       "content": "t:sections.multicolumn.settings.header_mobile.content"
     },
@@ -395,6 +406,34 @@
           "type": "image_picker",
           "id": "image",
           "label": "t:sections.multicolumn.blocks.column.settings.image.label"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
+            },
+            {
+              "value": "customer-service",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__45.label"
+            },
+            {
+              "value": "free-shipping",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__46.label"
+            },
+            {
+              "value": "refer-friend",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__47.label"
+            },
+            {
+              "value": "secure-payment",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__48.label"
+            }
+          ],
+          "default": "none",
+          "label": "t:sections.multicolumn.blocks.column.settings.icon.label"
         },
         {
           "type": "inline_richtext",
