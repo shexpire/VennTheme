@@ -74,8 +74,7 @@
 }
 
 .multicolumn.background-primary .multicolumn-card {
-  background: rgb(var(--color-background))
-    linear-gradient(rgba(var(--color-foreground), 0.04), rgba(var(--color-foreground), 0.04));
+  background: rgb(var(--color-background)) linear-gradient(rgba(var(--color-foreground), 0.04), rgba(var(--color-foreground), 0.04));
 }
 
 .multicolumn-list h3 {
@@ -236,21 +235,29 @@
 .multicolumn-card__icon-wrapper {
   margin-bottom: 1rem;
 }
+
 .multicolumn-card__icon-wrapper .svg-wrapper {
   width: 2.4rem;
   height: 2.4rem;
 }
+
 .with-borders {
-  border-top: .1rem solid rgba(var(--color-foreground),.08);
+  border-top: .1rem solid rgba(var(--color-foreground), .08);
 }
+
+.product .with-borders {
+  border-top: none;
+}
+
 .multicolumn-list__item {
   position: relative;
 }
+
 .with-borders .multicolumn-list__item:not(:last-child):after {
-  border-right: .1rem solid rgba(var(--color-foreground),.08);
+  border-right: .1rem solid rgba(var(--color-foreground), .08);
   content: '';
   display: block;
-  width:.1rem;
+  width: .1rem;
   height: 100%;
   position: absolute;
   right: -15px;

@@ -54,13 +54,82 @@
         "enable_sorting": false,
         "columns_mobile": "1",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 76
+      }
+    },
+    "multicolumn_ifYap9": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_eLwzQA": {
+          "type": "column",
+          "settings": {
+            "icon": "customer-service",
+            "title": "Customer service",
+            "text": "<p>Exceptional Support, Sustainable Solutions<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_aYm3b9": {
+          "type": "column",
+          "settings": {
+            "icon": "free-shipping",
+            "title": "Fast free shipping",
+            "text": "<p>Get free shipping on orders of $99 or more<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_igfGmP": {
+          "type": "column",
+          "settings": {
+            "icon": "refer-friend",
+            "title": "Refer a friend",
+            "text": "<p>Refer a friend and get 15% off each other.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_tmDkVF": {
+          "type": "column",
+          "settings": {
+            "icon": "secure-payment",
+            "title": "Secure payment",
+            "text": "<p>Your payment information is processed securely<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_eLwzQA",
+        "column_aYm3b9",
+        "column_igfGmP",
+        "column_tmDkVF"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "enable_borders": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 16
       }
     }
   },
   "order": [
     "banner",
     "image_banner_BB7cRF",
-    "product-grid"
+    "product-grid",
+    "multicolumn_ifYap9"
   ]
 }
