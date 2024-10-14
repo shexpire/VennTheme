@@ -403,7 +403,7 @@ blockquote {
 .field__input,
 .form__label,
 .select__select {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   letter-spacing: 0.04rem;
 }
@@ -1817,6 +1817,11 @@ input[type='checkbox'] {
 .form__label {
   display: block;
   margin-bottom: 0.6rem;
+  color: rgba(var(--color-foreground), 1);
+}
+
+.form__label span {
+  font-weight: 500;
 }
 
 .form__message {

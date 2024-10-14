@@ -2267,6 +2267,9 @@
               },
               "options__48": {
                 "label": "Secure Payment"
+              },
+              "options__49": {
+                "label": "Info"
               }
             }
           }

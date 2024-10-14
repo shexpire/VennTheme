@@ -32,6 +32,14 @@
           "settings": {
           }
         },
+        "popup_j8MRnX": {
+          "type": "popup",
+          "settings": {
+            "text": "Design Process",
+            "icon": "info",
+            "page": "design-process"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -58,6 +66,7 @@
         "caption",
         "price",
         "description",
+        "popup_j8MRnX",
         "variant_picker",
         "quantity_selector",
         "buy_buttons"

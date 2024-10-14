@@ -37,10 +37,22 @@
     if value.available
       assign option_disabled = false
     endif
+
+    if other_colour_number > 0
+      assign forloop_number = other_colour_number
+      if product.handle == current_handle
+        assign value_selected = value.selected
+      else
+        assign value_selected = false
+      endif
+    else
+      assign forloop_number = forloop.index0
+      assign value_selected = value.selected
+    endif
   -%}
 
   {%- capture input_id -%}
-    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+    {{ section.id }}-{{ option.position }}-{{ forloop_number -}}
   {%- endcapture -%}
 
   {%- capture input_name -%}
@@ -48,7 +60,11 @@
   {%- endcapture -%}
 
   {%- capture input_dataset -%}
+    {% if other_colour_number > 0 %}
+    data-product-url="{{ product.url }}"
+    {% else %}
     data-product-url="{{ value.product_url }}"
+    {% endif %}
     data-option-value-id="{{ value.id }}"
   {%- endcapture -%}
 
@@ -70,7 +86,7 @@
       value: value | escape,
       swatch: value.swatch,
       product_form_id: product_form_id,
-      checked: value.selected,
+      checked: value_selected,
       visually_disabled: option_disabled,
       shape: block.settings.swatch_shape,
       help_text: help_text,

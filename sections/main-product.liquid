@@ -452,6 +452,12 @@
                     type="button"
                     aria-haspopup="dialog"
                   >
+                    {% if block.settings.icon != 'none' %}
+                      <div class="product-popup-modal__button__icon-wrapper">
+                        {% render 'icon-accordion', icon: block.settings.icon -%}
+                      </div>
+                    {% endif %}
+
                     {{ block.settings.text | default: block.settings.page.title | escape }}
                   </button>
                 </modal-opener>
@@ -674,7 +680,7 @@
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
     {%- for block in popups -%}
-      <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+      <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal right-sided" {{ block.shopify_attributes }}>
         <div
           role="dialog"
           aria-label="{{ block.settings.text }}"
@@ -1169,6 +1175,22 @@
           "id": "text",
           "default": "t:sections.main-product.blocks.popup.settings.link_label.default",
           "label": "t:sections.main-product.blocks.popup.settings.link_label.label"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
+            },
+            {
+              "value": "info",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__49.label"
+            }
+          ],
+          "default": "none",
+          "label": "t:sections.multicolumn.blocks.column.settings.icon.label"
         },
         {
           "id": "page",

@@ -28,6 +28,7 @@
         endif
       -%}
       {%- if picker_type == 'swatch' -%}
+        {% assign other_colors = product.metafields.custom.other_colours.value %}
         <fieldset class="js product-form__input product-form__input--swatch">
           <legend class="form__label">
             {{ option.name }}:
@@ -35,12 +36,29 @@
               {{- option.selected_value -}}
             </span>
           </legend>
+          {% unless other_colors %}
           {% render 'product-variant-options',
             product: product,
             option: option,
             block: block,
             picker_type: picker_type
           %}
+          {% endunless %}
+          {% if other_colors %}
+            {% for other_product in other_colors %}
+              {%- for option in other_product.options_with_values -%}
+                {% assign other_product_option = option %}
+              {% endfor %}
+              {% render 'product-variant-options',
+                product: other_product,
+                option: other_product_option,
+                block: block,
+                picker_type: picker_type,
+                other_colour_number: forloop.index,
+                current_handle: product.handle
+              %}
+            {% endfor %}
+          {% endif %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill">
