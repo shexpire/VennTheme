@@ -90,7 +90,9 @@ product-info {
 }
 
 /* Dynamic checkout */
-
+.shopify-payment-button {
+  grid-area: 2 / 1 / 3 / 3;
+}
 .shopify-payment-button__button {
   font-family: inherit;
   min-height: 4.6rem;
@@ -190,7 +192,7 @@ product-info {
 }
 
 .product-form__submit {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .product-form__submit[aria-disabled='true'] + .shopify-payment-button .shopify-payment-button__button[disabled],
@@ -353,6 +355,8 @@ a.product__text {
 
 .product-form__quantity .form__label {
   margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  display: none;
 }
 
 .price-per-item__label.form__label {
@@ -364,7 +368,11 @@ a.product__text {
 }
 
 .product-form__buttons {
-  max-width: 44rem;
+  //max-width: 44rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 1.2rem;
+  align-items: end;
 }
 
 .product--no-media .product__info-container > modal-opener {
@@ -1343,6 +1351,7 @@ a.product__text {
 .product-media-container.constrain-height.media-fit-contain {
   --contained-width: calc(var(--constrained-height) * var(--aspect-ratio));
   width: min(var(--contained-width), 100%);
+  border-radius: var(--buttons-radius);
 }
 
 .product-media-container .media {
@@ -1351,6 +1360,7 @@ a.product__text {
 
 .product-media-container.constrain-height .media {
   padding-top: min(var(--constrained-height), var(--ratio-percent));
+  border-radius: var(--buttons-radius);
 }
 
 @media screen and (max-width: 749px) {
@@ -1525,4 +1535,23 @@ a.product__text {
   .recipient-form > input[type='checkbox']:checked + label .icon-checkmark {
     border: none;
   }
+}
+
+.product__inventory__bar {
+  width: 100%;
+  height: 8px;
+  align-self: stretch;
+  border-radius: 8px;
+  background: rgba(var(--color-foreground), 0.15);
+}
+.product__inventory__bar-inside {
+  height: 100%;
+  border-radius: 8px;
+  width: 0;
+  transition: width 0.3s ease;
+  content: '';
+  background: rgb(var(--color-foreground));
+}
+.product__inventory__bar-inside:empty {
+  display: block;
 }

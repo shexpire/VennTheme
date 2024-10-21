@@ -148,33 +148,28 @@
                   role="status"
                 >
                   {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
-                    {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
-                      {%- if product.selected_or_first_available_variant.inventory_quantity
-                          <= block.settings.inventory_threshold
+                    {% assign threshold = block.settings.inventory_threshold %}
+                    {% assign current_quantity = product.selected_or_first_available_variant.inventory_quantity  %}
+                    {%- if current_quantity > 0 -%}
+
+                      {%- if current_quantity
+                          <= threshold
                       -%}
-                        <span class="svg-wrapper" style="color: rgb(238, 148, 65)">
-                          {{- 'icon-inventory-status.svg' | inline_asset_content -}}
-                        </span>
                         {%- if block.settings.show_inventory_quantity -%}
                           {{-
                             'products.product.inventory_low_stock_show_count'
-                            | t: quantity: product.selected_or_first_available_variant.inventory_quantity
+                            | t: quantity: current_quantity
                           -}}
                         {%- else -%}
                           {{- 'products.product.inventory_low_stock' | t -}}
                         {%- endif -%}
+                        <div class="product__inventory__bar">
+                          {% assign threshold = threshold | append: '.00' | plus: 0 %}
+                          {% assign percentage = current_quantity | divided_by: threshold | times: 100 | round %}
+                          <div class="product__inventory__bar-inside" style="width: {{ percentage }}%"></div>
+                        </div>
                       {%- else -%}
-                        <span class="svg-wrapper" style="color: rgb(62, 214, 96)">
-                          {{- 'icon-inventory-status.svg' | inline_asset_content -}}
-                        </span>
-                        {%- if block.settings.show_inventory_quantity -%}
-                          {{-
-                            'products.product.inventory_in_stock_show_count'
-                            | t: quantity: product.selected_or_first_available_variant.inventory_quantity
-                          -}}
-                        {%- else -%}
-                          {{- 'products.product.inventory_in_stock' | t -}}
-                        {%- endif -%}
+                        {{- 'products.product.inventory_in_stock' | t -}}
                       {%- endif -%}
                     {%- else -%}
                       {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
@@ -466,17 +461,19 @@
                   assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
                   render 'share-button', block: block, share_link: share_url
                 %}
-
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
+              <div>
                 {%- render 'buy-buttons',
                   block: block,
+                  section: section,
                   product: product,
                   product_form_id: product_form_id,
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+              </div>
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -911,6 +908,13 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_quantity",
+          "default": true,
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_quantity.label",
+          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_quantity.info"
         },
         {
           "type": "checkbox",
