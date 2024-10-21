@@ -163,7 +163,7 @@
                         {%- else -%}
                           {{- 'products.product.inventory_low_stock' | t -}}
                         {%- endif -%}
-                        <div class="product__inventory__bar">
+                        <div class="product__inventory__bar hidden">
                           {% assign threshold = threshold | append: '.00' | plus: 0 %}
                           {% assign percentage = current_quantity | divided_by: threshold | times: 100 | round %}
                           <div class="product__inventory__bar-inside" style="width: {{ percentage }}%"></div>

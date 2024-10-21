@@ -2554,6 +2554,9 @@
           "label": "Heading",
           "default": "Multicolumn"
         },
+        "content_inside": {
+          "label": "Content inside"
+        },
         "image_width": {
           "label": "Image width",
           "options__1": {

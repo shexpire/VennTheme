@@ -96,6 +96,15 @@
   margin-top: 1rem;
 }
 
+.background-none.multicolumn__content-inside .multicolumn-card__info > :nth-child(2) {
+  margin-top: 2.8rem;
+}
+
+.background-none.multicolumn__content-inside .multicolumn-list__item {
+  cursor: pointer;
+}
+
+
 .multicolumn-list__item.center .media--adapt,
 .multicolumn-list__item .media--adapt .multicolumn-card__image {
   width: auto;
@@ -149,6 +158,28 @@
   padding: 2.5rem;
 }
 
+.background-none.multicolumn__content-inside .multicolumn-card__info {
+  position: absolute;
+  top: calc(100% - 94px);
+  height: 100%;
+  transition: top var(--duration-short) ease;
+  background: rgba(var(--color-background), 0.7);
+}
+
+.background-none.multicolumn__content-inside .multicolumn-card__info.active {
+  top: 0%;
+}
+
+.background-none.multicolumn__content-inside .multicolumn-card__info .inline-richtext {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.multicolumn__content-inside.gradient {
+  background: rgba(var(--color-foreground), 1);
+}
+
 .background-none .multicolumn-card__info {
   padding-top: 0;
   padding-left: 0;
@@ -161,6 +192,10 @@
 
 .background-none .multicolumn-card__image-wrapper + .multicolumn-card__info {
   padding-top: 2.5rem;
+}
+
+.background-none.multicolumn__content-inside .multicolumn-card__image-wrapper + .multicolumn-card__info {
+  padding: 2.6rem 3.2rem;
 }
 
 .background-none .slider .multicolumn-card__info {
@@ -199,6 +234,15 @@
   }
 }
 
+.background-none.multicolumn__content-inside .multicolumn-card__image-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.background-none.multicolumn__content-inside .multicolumn-card {
+  position: relative;
+}
+
 .multicolumn-card {
   position: relative;
   box-sizing: border-box;
@@ -212,6 +256,11 @@
 
 .multicolumn.background-none .multicolumn-card {
   border-radius: 0;
+}
+
+.multicolumn.background-none.multicolumn__content-inside .multicolumn-card {
+  border-radius: var(--text-boxes-radius);
+  overflow: hidden;
 }
 
 .multicolumn-card__info .link {
@@ -262,4 +311,53 @@
   position: absolute;
   right: -15px;
   top: 0;
+}
+
+/*reveal icon*/
+
+
+.reveal-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 4.4rem;
+  height: 4.4rem;
+  background-color: rgb(var(--color-foreground));
+  border-radius: 50%;
+}
+
+.reveal-icon {
+  position: relative;
+  display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.reveal-icon::before,
+.reveal-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(var(--color-background));
+  transition: transform 0.3s ease;
+}
+
+.reveal-icon::before {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.reveal-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.multicolumn-card__info.active .reveal-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.multicolumn-card__info.active .reveal-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }

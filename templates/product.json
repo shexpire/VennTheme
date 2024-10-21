@@ -149,6 +149,7 @@
         "columns_desktop": 4,
         "column_alignment": "center",
         "background_style": "none",
+        "content_inside": false,
         "button_label": "",
         "button_link": "",
         "color_scheme": "scheme-1",
@@ -159,45 +160,9 @@
         "padding_bottom": 36
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "image-with-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
-      ],
-      "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -213,12 +178,113 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "rich_text_dRKVW3": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_wYVezY": {
+          "type": "caption",
+          "settings": {
+            "caption": "Getting started",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
+        "heading_P7q6d8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ordering made easy.",
+            "heading_size": "h1"
+          }
+        },
+        "text_yYdNq4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Once you've placed your order, you'll receive an invitation to our platform with instructions on the next steps.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_wYVezY",
+        "heading_P7q6d8",
+        "text_yYdNq4"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_fcbYae": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_MUEE9W": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/design_image.png",
+            "icon": "none",
+            "title": "1. Purchase.",
+            "text": "<p>When you get your new VennCard, you unlock a world of powerful networking tools and features designed to elevate your business. It's everything you need to connect, grow, and scale - effortlessly.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GgKcJK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/design_image.png",
+            "icon": "none",
+            "title": "2. Design.",
+            "text": "<p>When you get your new VennCard, you unlock a world of powerful networking tools and features designed to elevate your business. It's everything you need to connect, grow, and scale - effortlessly.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_fXWpV9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/design_image.png",
+            "icon": "none",
+            "title": "3. Network.",
+            "text": "<p>When you get your new VennCard, you unlock a world of powerful networking tools and features designed to elevate your business. It's everything you need to connect, grow, and scale - effortlessly.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_MUEE9W",
+        "column_GgKcJK",
+        "column_fXWpV9"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "content_inside": true,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-3",
+        "enable_borders": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "multicolumn",
-    "image-with-text",
-    "related-products"
+    "related-products",
+    "rich_text_dRKVW3",
+    "multicolumn_fcbYae"
   ]
 }
