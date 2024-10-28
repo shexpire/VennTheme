@@ -3043,6 +3043,15 @@ details-disclosure > details {
   border-radius: calc(var(--media-radius) - var(--media-border-width));
 }
 
+.full-width-block .global-media-settings img,
+.full-width-block .image-with-text .image-with-text__media-item > * {
+  border-radius: 0;
+}
+
+.full-width-block .global-media-settings {
+  border-left: none;
+}
+
 .content-container--full-width,
 .global-media-settings--full-width,
 .global-media-settings--full-width img,

@@ -23,7 +23,7 @@
   endif
 -%}
 
-<div class="multicolumn{% if section.settings.content_inside %} multicolumn__content-inside{% endif %} color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.enable_borders %} with-borders{% endif %}">
+<div class="multicolumn{% if section.settings.card_mode == 'panel' %} multicolumn__content-inside{% endif %}{% if section.settings.card_mode == 'collage' %} multicolumn__content-collage{% endif %} color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.enable_borders %} with-borders{% endif %}">
   <div
     class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
@@ -31,10 +31,13 @@
     {% endif %}
   >
     {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title {% if section.settings.card_mode == 'panel' or section.settings.card_mode == 'collage' %} color-scheme-1{% endif %}">
         <h2 class="title inline-richtext {{ section.settings.heading_size }}">
           {{ section.settings.title }}
         </h2>
+        <div class="rte inline-richtext">
+          {{ section.settings.content }}
+        </div>
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
             {{- section.settings.button_label | escape -}}
@@ -125,8 +128,8 @@
               {% endif %}
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext {% if section.settings.content_inside %}h2{% else %}h4{% endif %}">{{ block.settings.title }}
-                  {% if section.settings.content_inside %}
+                  <h3 class="inline-richtext {% if section.settings.card_mode == 'panel' or section.settings.card_mode == 'collage' %}h2{% else %}h4{% endif %}">{{ block.settings.title }}
+                  {% if section.settings.card_mode == 'panel' %}
                   <span class="reveal-icon-container"><span class="reveal-icon"></span></span>
                   {% endif %}
                   </h3>
@@ -199,7 +202,7 @@
   </div>
 </div>
 
-{% if section.settings.content_inside %}
+{% if section.settings.card_mode == 'panel' %}
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const items = document.querySelectorAll('.background-none.multicolumn__content-inside .multicolumn-list__item');
@@ -230,6 +233,11 @@
       "id": "title",
       "default": "t:sections.multicolumn.settings.title.default",
       "label": "t:sections.multicolumn.settings.title.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "content",
+      "label": "t:sections.multicolumn.settings.content.label"
     },
     {
       "type": "select",
@@ -345,10 +353,24 @@
       "label": "t:sections.multicolumn.settings.background_style.label"
     },
     {
-      "type": "checkbox",
-      "id": "content_inside",
-      "default": false,
-      "label": "t:sections.multicolumn.settings.content_inside.label"
+      "type": "select",
+      "id": "card_mode",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.multicolumn.settings.card_mode.options__1.label"
+        },
+        {
+          "value": "panel",
+          "label": "t:sections.multicolumn.settings.card_mode.options__2.label"
+        },
+        {
+          "value": "collage",
+          "label": "t:sections.multicolumn.settings.card_mode.options__3.label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.multicolumn.settings.card_mode.label"
     },
     {
       "type": "text",

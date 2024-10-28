@@ -1515,6 +1515,17 @@
               "label": "Use outline button style"
             }
           }
+        },
+        "icon": {
+          "name": "Icon",
+          "settings": {
+            "image": {
+              "label": "Icon Image"
+            },
+            "size": {
+              "label": "Icon Size"
+            }
+          }
         }
       },
       "presets": {
@@ -2554,8 +2565,24 @@
           "label": "Heading",
           "default": "Multicolumn"
         },
+        "content": {
+          "label": "Content"
+        },
+        "card_mode": {
+          "label": "Card mode",
+          "options__1": {
+            "label": "Normal"
+          },
+          "options__2": {
+            "label": "Reveal Panel"
+          },
+          "options__3": {
+            "label": "Collage"
+          }
+        },
         "content_inside": {
-          "label": "Content inside"
+          "label": "Content inside",
+          "info": "Will convert the block into a panel reveal block with a + icon"
         },
         "image_width": {
           "label": "Image width",
