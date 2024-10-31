@@ -2494,6 +2494,12 @@
         },
         "enable_video_looping": {
           "label": "Enable video looping"
+        },
+        "auto_play": {
+          "label": "Autoplay"
+        },
+        "display_controls": {
+          "label": "Display Controls"
         }
       }
     },
@@ -3068,6 +3074,12 @@
         },
         "enable_video_looping": {
           "label": "Play video on loop"
+        },
+        "auto_play": {
+          "label": "Enable Autoplay"
+        },
+        "display_controls": {
+          "label": "Display Controls"
         },
         "header__1": {
           "content": "Shopify-hosted video"
