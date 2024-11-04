@@ -1477,6 +1477,39 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
+      },
+      {
+        "type": "header",
+        "content": "Free Shipping"
+      },
+      {
+        "type": "checkbox",
+        "id": "free_shipping_enabled",
+        "label": "Enabled",
+        "info": "Displays free shipping message.",
+        "default": true
+      },
+      {
+        "type": "paragraph",
+        "content": "Only enable this when free shipping rates has been set up for each of the currencies below, this feature informs the customer the amount needed to spend to reach the free delivery threshold. Setting the threshold to 0 disables this feature for that currency."
+      },
+      {
+        "type": "header",
+        "content": "United Kingdom",
+        "info": "Set free shipping options for United Kingdom"
+      },
+      {
+        "type": "number",
+        "id": "free_shipping_threshold_gbp",
+        "label": "Threshold",
+        "default": 0,
+        "info": "Set value to 0 to not show the free shipping message for this currency."
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_duration_gbp",
+        "label": "Shipping Estimate",
+        "info": "Set number of days for shipping."
       }
     ]
   }

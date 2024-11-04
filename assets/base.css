@@ -3612,3 +3612,7 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+.thumbnail.global-media-settings  {
+  border-radius: calc(var(--media-radius) / 2);
+}

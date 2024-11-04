@@ -62,7 +62,7 @@
         </div>
       {%- endif -%}
       <div class="drawer__header">
-        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
+        <h2 class="drawer__heading h1">{{ 'sections.cart.title' | t }}</h2>
         <button
           class="drawer__close"
           type="button"
@@ -74,6 +74,7 @@
           </span>
         </button>
       </div>
+      {%- render 'lq-free_shipping', context: 'amount', section_id: 'cart_drawer_message' -%}
       <cart-drawer-items
         {% if cart == empty %}
           class=" is-empty"
@@ -135,6 +136,9 @@
                         </td>
 
                         <td class="cart-item__details" role="cell" headers="CartDrawer-ColumnProduct">
+                          {%- if item.product.metafields.custom.subtitle -%}
+                            <p class="caption-with-letter-spacing">{{ item.product.metafields.custom.subtitle }}</p>
+                          {%- endif -%}
                           {%- if settings.show_vendor -%}
                             <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
                           {%- endif -%}

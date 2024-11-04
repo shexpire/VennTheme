@@ -1,0 +1,63 @@
+{%- if settings.free_shipping_enabled -%}
+	<script src="{{ 'lq-free_shipping.js' | asset_url }}" defer="defer"></script>
+	{% if context == 'amount' %}
+
+		{%- capture free_shipping_threshold -%}free_shipping_threshold_{{ cart.currency.iso_code | handleize }}{%- endcapture -%}
+		{%- assign free_shipping_threshold = settings[free_shipping_threshold] | times: 100 -%}
+
+		{%- if free_shipping_threshold > 0 -%}
+			{% liquid
+				assign cart_total = cart.total_price | times: 1.0
+				assign progress = cart_total | divided_by: free_shipping_threshold | times: 100 | at_most: 100
+
+				assign msg = 'general.cart.free_shipping_html' | t
+				if cart.total_price == 0
+					assign msg = 'general.cart.free_shipping_zero_html' | t
+				elsif cart.total_price >= free_shipping_threshold
+					assign msg = 'general.cart.free_shipping_complete_html' | t
+					assign class_value = "free-shipping--hasQualified"
+				endif
+				if cart_total > 0
+					assign class_value = class_value | append: ' ' | append: 'free-shipping--isVisible'
+				endif
+			%}
+
+			<free-shipping
+				class="{{ class_value }} product-toggle"
+				id="mini-cart-incentives"
+				data-id="{{ section_id }}"
+				data-message="{{ msg }}"
+				data-cart-total="{{ cart.total_price }}"
+				data-free-shipping-threshold="{{ free_shipping_threshold }}"
+				data-round-amount="true"
+				data-currency-symbol="{{ cart.currency.symbol }}"
+			>
+				<div class="progress-bar__wrapper">
+					<progress-bar style="--progress: {{ progress }}%;" data-progress-bar-type="{{ tracker_type }}"></progress-bar>
+				</div>
+			</free-shipping>
+		{%- endif -%}
+
+	{% elsif context == 'time' %}
+
+		{% unless template contains 'giftcard' %}
+			{%- if product.selected_or_first_available_variant.available -%}
+				<div class="product__tax caption rte">
+					{%- capture free_shipping_duration -%}free_shipping_duration_{{ cart.currency.iso_code | handleize }}{%- endcapture -%}
+					{% liquid
+						assign freedays = settings[free_shipping_duration] | plus: 0
+						assign freedate = freedays | times: 24 | times: 60 | times: 60
+						assign free_delivery = 'now' | date: "%s" | plus: freedate | date: "%a, %b %d"
+					%}
+					{% if freedays > 0 %}
+						<p>
+							{{ 'products.product.shipping_times_free_html' | t: free_delivery: free_delivery }}
+						</p>
+					{% endif %}
+				</div>
+			{% endif %}
+		{% endunless %}
+
+	{%- endif -%}
+
+{%- endif -%}

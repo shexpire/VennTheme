@@ -694,8 +694,10 @@
             {{- 'icon-close.svg' | inline_asset_content -}}
           </button>
           <div class="product-popup-modal__content-info">
-            <h1 class="h2">{{ block.settings.page.title | escape }}</h1>
-            {{ block.settings.page.content }}
+            <h1>{{ block.settings.page.title | escape }}</h1>
+            <div  class="product-popup-modal__content-text">
+              {{ block.settings.page.content }}
+            </div>
           </div>
         </div>
       </modal-dialog>

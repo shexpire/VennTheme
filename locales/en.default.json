@@ -42,7 +42,10 @@
     "cart": {
       "view": "View cart ({{ count }})",
       "view_empty_cart": "View cart",
-      "item_added": "Item added to your cart"
+      "item_added": "Item added to your cart",
+      "free_shipping_html": "Spend <b>{{ amount }}</b> more for free shipping!",
+      "free_shipping_zero_html": "Free shipping on orders over <b>{{ amount }}</b>",
+      "free_shipping_complete_html": "Your order qualifies for free shipping!"
     },
     "share": {
       "close": "Close share",
@@ -282,7 +285,7 @@
       }
     },
     "cart": {
-      "title": "Your cart",
+      "title": "Cart",
       "caption": "Cart items",
       "remove_title": "Remove {{ title }}",
       "estimated_total": "Estimated total",

@@ -17,12 +17,13 @@
 
 .drawer__inner {
   height: 100%;
-  width: 40rem;
+  width: 60rem;
   max-width: calc(100vw - 3rem);
   padding: 0 1.5rem;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
   border-right: 0;
   overflow: hidden;
+  border-radius: var(--popup-corner-radius) 0 0 var(--popup-corner-radius);
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
@@ -70,29 +71,31 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 
 .drawer__header {
   position: relative;
-  padding: 1.5rem 0;
+  padding: 2.5rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .drawer__heading {
-  margin: 0 0 1rem;
+  margin: 1rem 0;
 }
 
 .drawer__close {
-  display: inline-block;
-  padding: 0;
-  min-width: 4.4rem;
-  min-height: 4.4rem;
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-button), 0);
-  position: absolute;
-  top: 10px;
-  right: -10px;
-  color: rgb(var(--color-foreground));
-  background-color: transparent;
-  border: none;
+  background-color: rgb(var(--color-background));
+  border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+  border-radius: 50%;
+  color: rgba(var(--color-foreground), 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  position: sticky;
+  padding: 1.2rem;
+  z-index: 2;
+  top: 4rem;
+  width: 4rem;
+  margin: 0 0 0 auto;
 }
 
 .cart-drawer__warnings .drawer__close {
@@ -100,8 +103,8 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 }
 
 .drawer__close .svg-wrapper {
-  height: 2rem;
-  width: 2rem;
+  height: auto;
+  width: 2.2rem;
 }
 
 .drawer__contents {
@@ -402,4 +405,111 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
   .cart-drawer .cart-item__error {
     margin-left: 0;
   }
+  .drawer__inner {
+    padding: 0 3rem;
+  }
+}
+
+/* Free shipping
+================================================== */
+free-shipping {
+  background: transparent;
+  padding: 2.4rem 1.5rem;
+  margin: 0 -1.5rem;
+  position: relative;
+}
+free-shipping p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0 0 1.6rem 0;
+  color: #64748B;
+}
+free-shipping p b {
+  font-weight: 400;
+  color: rgba(var(--color-button), 1);
+}
+
+free-shipping#mini-cart-incentives {
+  margin-bottom: 0
+}
+free-shipping#mini-cart-incentives p {
+  line-height: 1;
+}
+free-shipping.free-shipping--isVisible{
+  display: block;
+}
+free-shipping:not(.free-shipping--isVisible) {
+//display: none;
+}
+
+/* Progress bar
+================================================== */
+
+@keyframes expandWidth {
+  0% { width: 0; }
+}
+
+@keyframes moveRight {
+  0% { left: 0; }
+}
+
+progress-bar {
+  height: .8rem;
+  position: relative;
+  display: block;
+  background: rgba(var(--color-button), 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+progress-bar:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  width: var(--progress);
+  border-radius: 5px;
+  background-color:  rgba(var(--color-button), 1);
+  animation: expandWidth 500ms linear;
+  transition: all 500ms linear;
+}
+.free-shipping--hasQualified progress-bar:before {
+  width: var(--progress);
+}
+
+progress-bar:after {
+  content: '';
+  display: block;
+  height: 0.8rem;
+  border-radius: 50%;
+}
+progress-bar:after {
+  left: var(--progress );
+  animation: moveRight 500ms linear;
+  transition: all 500ms linear;
+  z-index: 3;
+}
+.free-shipping--hasQualified progress-bar:after {
+  left: calc(var(--progress) - 11px);
+}
+
+free-shipping:not(.free-shipping--isVisible) progress-bar:after {
+  display: none;
+}
+
+progress-bar:after,
+.free-shipping--isVisible .progress-bar__wrapper:before {
+
+}
+
+.progress-bar__wrapper {
+  position: relative;
+}
+.progress-bar__wrapper:before {
+  left: 0;
+}
+.progress-bar__wrapper:after {
+  right: 0;
 }
