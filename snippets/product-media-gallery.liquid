@@ -76,6 +76,9 @@
         assign featured_media = product.selected_or_first_available_variant.featured_media
         if product.featured_media.media_type == 'video'
           assign video_featured = product.featured_media
+          assign autoplay = product.metafields.video.auto_play
+          assign loop = product.metafields.video.loop
+          assign hide_controls = product.metafields.video.hide_controls
         endif
       %}
       {% if video_featured %}
@@ -268,8 +271,14 @@
             id="Slide-Thumbnails-{{ section.id }}-0{{ id_append }}"
             class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains video_featured.src %} thumbnail-list_item--variant{% endif %}"
             data-target="{{ section.id }}-{{ video_featured.id }}"
+            data-video="true"
             data-media-position="{{ media_index }}"
           >
+            <span class="thumbnail__badge" aria-hidden="true">
+              <span class="svg-wrapper">
+                {{- 'icon-play.svg' | inline_asset_content -}}
+              </span>
+            </span>
             {%- capture thumbnail_id -%}
               Thumbnail-{{ section.id }}-0{{ id_append }}
             {%- endcapture -%}

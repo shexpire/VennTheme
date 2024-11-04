@@ -77,6 +77,11 @@ if (!customElements.get('media-gallery')) {
           .querySelectorAll('button')
           .forEach((element) => element.removeAttribute('aria-current'));
         thumbnail.querySelector('button').setAttribute('aria-current', true);
+        if (thumbnail.dataset.video === "true") {
+          console.log( thumbnail.dataset.mediaPosition)
+          let videoPosition = Number(thumbnail.dataset.mediaPosition);
+          this.querySelector(`.product__media-list li:nth-child(${videoPosition}) video`).play();
+        }
         if (this.elements.thumbnails.isSlideVisible(thumbnail, 10)) return;
 
         this.elements.thumbnails.slider.scrollTo({ left: thumbnail.offsetLeft });
