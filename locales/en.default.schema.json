@@ -2671,6 +2671,9 @@
             "image": {
               "label": "Image"
             },
+            "video": {
+              "label": "Video"
+            },
             "icon": {
               "label": "Icon"
             },

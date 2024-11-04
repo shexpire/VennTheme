@@ -163,7 +163,7 @@
   position: absolute;
   top: calc(100% - 94px);
   height: 100%;
-  transition: top var(--duration-short) ease;
+  transition: top var(--duration-default) ease;
   background: rgba(var(--color-background), 0.7);
 }
 .background-none.multicolumn__content-collage .multicolumn-card__info {

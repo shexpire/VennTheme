@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "video": {
@@ -15,12 +6,14 @@
         "heading": "",
         "heading_size": "h1",
         "enable_video_looping": true,
-        "video": "shopify://files/videos/venncards.mp4",
+        "auto_play": true,
+        "display_controls": false,
+        "video": "shopify:\/\/files\/videos\/venncards.mp4",
         "video_url": "",
         "description": "",
-        "full_width": true,
+        "full_width": false,
         "color_scheme": "scheme-1",
-        "padding_top": 0,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
@@ -37,7 +30,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         }
       },
@@ -127,9 +120,12 @@
         "column1": {
           "type": "column",
           "settings": {
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "none",
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -137,9 +133,12 @@
         "column2": {
           "type": "column",
           "settings": {
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "none",
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -147,9 +146,12 @@
         "column3": {
           "type": "column",
           "settings": {
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "none",
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }

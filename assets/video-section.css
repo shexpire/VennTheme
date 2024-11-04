@@ -46,3 +46,8 @@
 .video-section__media.media-fit-cover video {
   object-fit: cover;
 }
+
+.multicolumn-card__image-wrapper video {
+  object-fit: cover;
+  left: 0;
+}

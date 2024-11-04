@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -95,7 +86,9 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
-        "enable_video_looping": false,
+        "enable_video_looping": true,
+        "auto_play": true,
+        "display_controls": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -106,9 +99,12 @@
         "column_kxLTgD": {
           "type": "column",
           "settings": {
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "customer-service",
             "title": "Customer service",
-            "text": "<p>Exceptional Support, Sustainable Solutions</p>",
+            "text": "<p>Exceptional Support, Sustainable Solutions<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -116,9 +112,12 @@
         "column_W3Vpg4": {
           "type": "column",
           "settings": {
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "free-shipping",
             "title": "Fast free shipping",
-            "text": "<p>Get free shipping on orders of $99 or more</p>",
+            "text": "<p>Get free shipping on orders of $99 or more<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -126,9 +125,12 @@
         "column_j6HkVV": {
           "type": "column",
           "settings": {
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "refer-friend",
             "title": "Refer a friend",
-            "text": "<p>Refer a friend and get 15% off each other.</p>",
+            "text": "<p>Refer a friend and get 15% off each other.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -136,9 +138,12 @@
         "column_zh6rmi": {
           "type": "column",
           "settings": {
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "secure-payment",
             "title": "Secure payment",
-            "text": "<p>Your payment information is processed securely</p>",
+            "text": "<p>Your payment information is processed securely<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -210,7 +215,7 @@
         "text_yYdNq4": {
           "type": "text",
           "settings": {
-            "text": "<p>Once you've placed your order, you'll receive an invitation to our platform with instructions on the next steps.</p>"
+            "text": "<p>Once you've placed your order, you'll receive an invitation to our platform with instructions on the next steps.<\/p>"
           }
         }
       },
@@ -234,10 +239,13 @@
         "column_MUEE9W": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/design_image.png",
+            "image": "shopify:\/\/shop_images\/design_image.png",
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "none",
             "title": "1. Purchase.",
-            "text": "<p>When you get your new VennCard, you unlock a world of powerful networking tools and features designed to elevate your business. It's everything you need to connect, grow, and scale - effortlessly.</p>",
+            "text": "<p>When you get your new VennCard, you unlock a world of powerful networking tools and features designed to elevate your business. It's everything you need to connect, grow, and scale - effortlessly.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -245,10 +253,13 @@
         "column_GgKcJK": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/design_image.png",
+            "image": "shopify:\/\/shop_images\/design_image.png",
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "none",
             "title": "2. Design.",
-            "text": "<p>When you get your new VennCard, you unlock a world of powerful networking tools and features designed to elevate your business. It's everything you need to connect, grow, and scale - effortlessly.</p>",
+            "text": "<p>When you get your new VennCard, you unlock a world of powerful networking tools and features designed to elevate your business. It's everything you need to connect, grow, and scale - effortlessly.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -256,10 +267,13 @@
         "column_fXWpV9": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/design_image.png",
+            "image": "shopify:\/\/shop_images\/design_image.png",
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "none",
             "title": "3. Network.",
-            "text": "<p>When you get your new VennCard, you unlock a world of powerful networking tools and features designed to elevate your business. It's everything you need to connect, grow, and scale - effortlessly.</p>",
+            "text": "<p>When you get your new VennCard, you unlock a world of powerful networking tools and features designed to elevate your business. It's everything you need to connect, grow, and scale - effortlessly.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -296,7 +310,11 @@
         "column_Cm4pBM": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/background-1.png",
+            "image": "shopify:\/\/shop_images\/background-1.png",
+            "video": "shopify:\/\/files\/videos\/Card Rotation - Gradient Background.mp4",
+            "enable_video_looping": true,
+            "auto_play": true,
+            "display_controls": false,
             "icon": "none",
             "title": "Custom Card",
             "text": "",
@@ -307,7 +325,10 @@
         "column_RRthDR": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/background-2.png",
+            "image": "shopify:\/\/shop_images\/background-2.png",
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "none",
             "title": "Platform Access",
             "text": "",
@@ -318,7 +339,10 @@
         "column_hEUnN3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/background-3.png",
+            "image": "shopify:\/\/shop_images\/background-3.png",
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "none",
             "title": "Digital Profile",
             "text": "",
@@ -329,7 +353,10 @@
         "column_a43WbX": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/background-4.png",
+            "image": "shopify:\/\/shop_images\/background-4.png",
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "none",
             "title": "VennCard App",
             "text": "",
@@ -370,7 +397,7 @@
         "icon_6bLxeB": {
           "type": "icon",
           "settings": {
-            "image": "shopify://shop_images/tree-duotone_1.svg",
+            "image": "shopify:\/\/shop_images\/tree-duotone_1.svg",
             "size": "44"
           }
         },
@@ -384,7 +411,7 @@
         "text_qFtHqK": {
           "type": "text",
           "settings": {
-            "text": "<p>Our partnership with Ecologi represents a shared vision - restoring forests, reducing carbon footprints, and regenerating natural habitats. Together, we’re making a lasting impact.</p>",
+            "text": "<p>Our partnership with Ecologi represents a shared vision - restoring forests, reducing carbon footprints, and regenerating natural habitats. Together, we’re making a lasting impact.<\/p>",
             "text_style": "body"
           }
         }
@@ -395,7 +422,7 @@
         "text_qFtHqK"
       ],
       "settings": {
-        "image": "shopify://shop_images/Frame_1000002647.png",
+        "image": "shopify:\/\/shop_images\/Frame_1000002647.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
