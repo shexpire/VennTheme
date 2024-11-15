@@ -99,7 +99,9 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 }
 
 .cart-drawer__warnings .drawer__close {
-  right: 5px;
+  right: 2rem;
+  position: absolute;
+  top: 2rem;
 }
 
 .drawer__close .svg-wrapper {

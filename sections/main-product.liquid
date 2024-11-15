@@ -222,6 +222,32 @@
                     </div>
                   </details>
                 </div>
+              {%- when 'properties' -%}
+              {% assign properties = product.metafields.custom.properties.value %}
+
+              {% if properties != blank %}
+                <properties class="">
+                  {% for property in properties %}
+                    <fieldset class="js product-form__input product-form__input--pill">
+                      <legend class="form__label property__label">{{ property.name }}</legend>
+                      {% for option in property.options.value %}
+                        <input
+                          type="radio"
+                          id="{{ property.name | handleize }}-{{ option | handleize }}"
+                          name="properties[{{ property.name }}]"
+                          value="{{ option | escape }}"
+                          form="{{ product_form_id }}"
+                          {% if forloop.first %}checked{% endif %}
+                        >
+                        <label for="{{ property.name | handleize }}-{{ option | handleize }}">
+                          {{ option }}
+                        </label>
+                      {% endfor %}
+                    </fieldset>
+                  {% endfor %}
+
+                </properties>
+              {% endif %}
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -853,6 +879,11 @@
     {
       "type": "quantity_selector",
       "name": "t:sections.main-product.blocks.quantity_selector.name",
+      "limit": 1
+    },
+    {
+      "type": "properties",
+      "name": "t:sections.main-product.blocks.properties.name",
       "limit": 1
     },
     {

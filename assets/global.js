@@ -714,8 +714,16 @@ class DeferredMedia extends HTMLElement {
       const deferredElement = this.appendChild(content.querySelector('video, model-viewer, iframe'));
       if (focus) deferredElement.focus();
       if (deferredElement.nodeName == 'VIDEO' && deferredElement.getAttribute('autoplay')) {
-        // force autoplay for safari
-        deferredElement.play();
+
+        let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        if (isSafari) {
+          deferredElement.setAttribute('autoplay', 'autoplay'); // force autoplay for safari
+          deferredElement.play();
+        } else {
+          setTimeout(() => {
+            deferredElement.play();
+          } , 200);
+        }
       }
     }
   }

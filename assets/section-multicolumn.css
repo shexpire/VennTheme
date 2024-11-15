@@ -115,6 +115,19 @@
   transform: translateX(-50%);
 }
 
+.multicolumn-card__image-wrapper .media.add-gradient:after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+  overflow: hidden;
+  border-radius: calc(var(--media-radius) - var(--media-border-width));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+}
+
+
 @media screen and (max-width: 749px) {
   .multicolumn-list {
     margin: 0;

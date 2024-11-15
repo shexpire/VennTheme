@@ -2041,6 +2041,9 @@
         "quantity_selector": {
           "name": "Quantity selector"
         },
+        "properties": {
+          "name": "Properties"
+        },
         "variant_picker": {
           "name": "Variant picker",
           "settings": {
@@ -2670,6 +2673,9 @@
           "settings": {
             "image": {
               "label": "Image"
+            },
+            "enable_image_gradient": {
+              "label": "Enable image gradient"
             },
             "video": {
               "label": "Video"
