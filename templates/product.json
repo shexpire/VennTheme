@@ -344,8 +344,8 @@
         "column_RRthDR": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/background-2.png",
-            "enable_image_gradient": false,
+            "image": "shopify://shop_images/Feature2.png",
+            "enable_image_gradient": true,
             "enable_video_looping": false,
             "auto_play": false,
             "display_controls": true,
@@ -359,8 +359,8 @@
         "column_hEUnN3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/background-3.png",
-            "enable_image_gradient": false,
+            "image": "shopify://shop_images/Feature.png",
+            "enable_image_gradient": true,
             "enable_video_looping": false,
             "auto_play": false,
             "display_controls": true,
