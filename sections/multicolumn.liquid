@@ -45,7 +45,7 @@
         {%- endif -%}
       </div>
     {%- endunless -%}
-    <slider-component class="slider-mobile-gutter">
+    <slider-component class="slider-mobile-gutter{% if section.settings.card_mode == 'panel' %} slide_up{% endif %}">
       <ul
         class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}"
         id="Slider-{{ section.id }}"
@@ -242,23 +242,6 @@
     </div>
   </div>
 </div>
-
-{% if section.settings.card_mode == 'panel' %}
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const items = document.querySelectorAll('.background-none.multicolumn__content-inside .multicolumn-list__item');
-
-      items.forEach(item => {
-        item.addEventListener('click', function() {
-          const info = item.querySelector('.multicolumn-card__info');
-          if (info) {
-            info.classList.toggle('active');
-          }
-        });
-      });
-    });
-  </script>
-{% endif %}
 
 {% schema %}
 {

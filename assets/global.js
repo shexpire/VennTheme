@@ -748,6 +748,11 @@ class SliderComponent extends HTMLElement {
         dot.addEventListener('click', this.onButtonClick.bind(this))
       );
     }
+    if (this.classList.contains('slide_up')) {
+      this.querySelectorAll('.multicolumn-list__item').forEach((item) => {
+        item.addEventListener('click', this.slideUpClick.bind(this));
+      });
+    }
 
     if (!this.slider || !this.nextButton) return;
 
@@ -758,6 +763,14 @@ class SliderComponent extends HTMLElement {
     this.slider.addEventListener('scroll', this.update.bind(this));
     this.prevButton.addEventListener('click', this.onButtonClick.bind(this));
     this.nextButton.addEventListener('click', this.onButtonClick.bind(this));
+  }
+
+  slideUpClick(event) {
+
+    const info = event.target.closest('.multicolumn-list__item').querySelector('.multicolumn-card__info');
+    if (info) {
+      info.classList.toggle('active');
+    }
   }
 
   initPages() {
