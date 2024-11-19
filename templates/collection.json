@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
@@ -63,9 +72,13 @@
         "column_eLwzQA": {
           "type": "column",
           "settings": {
+            "enable_image_gradient": false,
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "customer-service",
             "title": "Customer service",
-            "text": "<p>Exceptional Support, Sustainable Solutions<\/p>",
+            "text": "<p>Exceptional Support, Sustainable Solutions</p>",
             "link_label": "",
             "link": ""
           }
@@ -73,9 +86,13 @@
         "column_aYm3b9": {
           "type": "column",
           "settings": {
+            "enable_image_gradient": false,
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "free-shipping",
             "title": "Fast free shipping",
-            "text": "<p>Get free shipping on orders of $99 or more<\/p>",
+            "text": "<p>Get free shipping on orders of $99 or more</p>",
             "link_label": "",
             "link": ""
           }
@@ -83,9 +100,13 @@
         "column_igfGmP": {
           "type": "column",
           "settings": {
+            "enable_image_gradient": false,
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "refer-friend",
             "title": "Refer a friend",
-            "text": "<p>Refer a friend and get 15% off each other.<\/p>",
+            "text": "<p>Refer a friend and get 15% off each other.</p>",
             "link_label": "",
             "link": ""
           }
@@ -93,9 +114,13 @@
         "column_tmDkVF": {
           "type": "column",
           "settings": {
+            "enable_image_gradient": false,
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
             "icon": "secure-payment",
             "title": "Secure payment",
-            "text": "<p>Your payment information is processed securely<\/p>",
+            "text": "<p>Your payment information is processed securely</p>",
             "link_label": "",
             "link": ""
           }
@@ -109,12 +134,14 @@
       ],
       "settings": {
         "title": "",
+        "content": "",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 4,
         "column_alignment": "center",
         "background_style": "none",
+        "card_mode": "default",
         "button_label": "",
         "button_link": "",
         "color_scheme": "scheme-1",
