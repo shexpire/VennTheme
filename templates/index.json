@@ -13,7 +13,7 @@
       "type": "video",
       "custom_css": [
         ".video-section {max-height: 700px;}",
-        ".video-section video {top: -180px;}"
+        ".video-section video {top: -220px;}"
       ],
       "settings": {
         "heading": "",
