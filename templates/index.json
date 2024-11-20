@@ -64,7 +64,7 @@
         "description_style": "body",
         "collection": "frontpage",
         "products_to_show": 12,
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "full_width": false,
         "show_view_all": false,
         "view_all_style": "solid",
