@@ -332,7 +332,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/background-1.png",
-            "enable_image_gradient": false,
+            "enable_image_gradient": true,
+            "video": "shopify://files/videos/Hero Video.mp4",
             "enable_video_looping": true,
             "auto_play": true,
             "display_controls": false,
@@ -346,7 +347,7 @@
         "column_RRthDR": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Feature2.png",
+            "image": "shopify://shop_images/Value.png",
             "enable_image_gradient": true,
             "enable_video_looping": false,
             "auto_play": false,
@@ -361,7 +362,7 @@
         "column_hEUnN3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Feature.png",
+            "image": "shopify://shop_images/digital-profile.png",
             "enable_image_gradient": true,
             "enable_video_looping": false,
             "auto_play": false,
@@ -376,7 +377,7 @@
         "column_a43WbX": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/background-4.png",
+            "image": "shopify://shop_images/App-_Image.png",
             "enable_image_gradient": false,
             "enable_video_looping": false,
             "auto_play": false,
