@@ -331,7 +331,7 @@
         "column_Cm4pBM": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/custom-card.png",
+            "image": "shopify://shop_images/custom-card2.png",
             "enable_image_gradient": true,
             "enable_video_looping": true,
             "auto_play": true,
