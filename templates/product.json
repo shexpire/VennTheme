@@ -331,9 +331,8 @@
         "column_Cm4pBM": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/background-1.png",
+            "image": "shopify://shop_images/custom-card.png",
             "enable_image_gradient": true,
-            "video": "shopify://files/videos/Hero Video.mp4",
             "enable_video_looping": true,
             "auto_play": true,
             "display_controls": false,
@@ -378,7 +377,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/App-_Image.png",
-            "enable_image_gradient": false,
+            "enable_image_gradient": true,
             "enable_video_looping": false,
             "auto_play": false,
             "display_controls": true,
