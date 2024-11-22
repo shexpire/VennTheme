@@ -376,7 +376,7 @@
         "column_a43WbX": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/App-_Image.png",
+            "image": "shopify://shop_images/app.png",
             "enable_image_gradient": true,
             "enable_video_looping": false,
             "auto_play": false,
