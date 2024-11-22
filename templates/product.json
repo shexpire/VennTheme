@@ -254,7 +254,7 @@
         "column_MUEE9W": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/design_image.png",
+            "image": "shopify://shop_images/Silver_3ef5b8c3-a5d0-4bfc-bbfb-4eb72cde9d4d.jpg",
             "enable_image_gradient": false,
             "video": "shopify://files/videos/Card Rotation - White Background.mp4",
             "enable_video_looping": true,
@@ -270,7 +270,7 @@
         "column_GgKcJK": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/design_image.png",
+            "image": "shopify://shop_images/Silver.jpg",
             "enable_image_gradient": false,
             "video": "shopify://files/videos/Custom Design Card - Rotation.mp4",
             "enable_video_looping": true,
@@ -286,7 +286,7 @@
         "column_fXWpV9": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/design_image.png",
+            "image": "shopify://shop_images/Black.jpg",
             "enable_image_gradient": false,
             "video": "shopify://files/videos/Connect - Profile - White Background.mp4",
             "enable_video_looping": true,
