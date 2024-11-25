@@ -11,11 +11,7 @@
   "sections": {
     "video": {
       "type": "video",
-      "disabled": true,
-      "custom_css": [
-        ".video-section {max-height: 700px;}",
-        ".video-section video {top: -220px;}"
-      ],
+      "custom_css": [],
       "settings": {
         "heading": "",
         "heading_size": "h2",
