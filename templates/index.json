@@ -9,8 +9,58 @@
  */
 {
   "sections": {
+    "image_banner_aAYaLT": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_DQLdLY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_PVNwUh": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_kgiRmU": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_DQLdLY",
+        "text_PVNwUh",
+        "buttons_kgiRmU"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/all-products-hero.jpg",
+        "video": "shopify://files/videos/Hero Video.mp4",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "video": {
       "type": "video",
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "heading": "",
@@ -81,76 +131,92 @@
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
-        "column1": {
+        "column_kxLTgD": {
           "type": "column",
           "settings": {
             "enable_image_gradient": false,
             "enable_video_looping": false,
             "auto_play": false,
             "display_controls": true,
-            "icon": "none",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "icon": "customer-service",
+            "title": "Customer service",
+            "text": "<p>Exceptional Support, Sustainable Solutions</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column2": {
+        "column_W3Vpg4": {
           "type": "column",
           "settings": {
             "enable_image_gradient": false,
             "enable_video_looping": false,
             "auto_play": false,
             "display_controls": true,
-            "icon": "none",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "icon": "free-shipping",
+            "title": "Fast free shipping",
+            "text": "<p>Get free shipping on orders of $99 or more</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column3": {
+        "column_j6HkVV": {
           "type": "column",
           "settings": {
             "enable_image_gradient": false,
             "enable_video_looping": false,
             "auto_play": false,
             "display_controls": true,
-            "icon": "none",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "icon": "refer-friend",
+            "title": "Refer a friend",
+            "text": "<p>Refer a friend and get 15% off each other.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_zh6rmi": {
+          "type": "column",
+          "settings": {
+            "enable_image_gradient": false,
+            "enable_video_looping": false,
+            "auto_play": false,
+            "display_controls": true,
+            "icon": "secure-payment",
+            "title": "Secure payment",
+            "text": "<p>Your payment information is processed securely</p>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "column_kxLTgD",
+        "column_W3Vpg4",
+        "column_j6HkVV",
+        "column_zh6rmi"
       ],
       "settings": {
         "title": "",
         "content": "",
         "heading_size": "h1",
-        "image_width": "third",
+        "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "column_alignment": "center",
         "background_style": "none",
         "card_mode": "default",
         "button_label": "",
         "button_link": "",
         "color_scheme": "scheme-1",
-        "enable_borders": false,
+        "enable_borders": true,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 52,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
+    "image_banner_aAYaLT",
     "video",
     "rich_text",
     "featured_collection",

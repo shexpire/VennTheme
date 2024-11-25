@@ -1212,6 +1212,10 @@
         "image_2": {
           "label": "Second image"
         },
+        "video": {
+          "label": "Video",
+          "info": "Add a video to the first image."
+        },
         "image_overlay_opacity": {
           "label": "Image overlay opacity"
         },
