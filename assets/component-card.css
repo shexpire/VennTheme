@@ -48,6 +48,11 @@
   border: var(--border-width) solid rgba(var(--color-foreground), var(--border-opacity));
 }
 
+.card--card .media {
+  --border-radius: 0;
+}
+
+
 .card--card:after,
 .card--standard .card__inner:after {
   content: '';
