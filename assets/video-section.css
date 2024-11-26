@@ -39,8 +39,12 @@
   height: 100%;
 }
 
+.image-with-text .video-section__media video {
+  object-fit: cover;
+}
+
 .video-section__media video {
-  background: #000000;
+  //background: #000000;
 }
 
 .video-section__media.media-fit-cover video {

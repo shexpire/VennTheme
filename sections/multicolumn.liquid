@@ -142,7 +142,7 @@
                       }}
                       </template>
                     </deferred-media>
-                      {{ 'video-section.css' | asset_url | stylesheet_tag }}
+                    {{ 'video-section.css' | asset_url | stylesheet_tag }}
                     {% else %}
                     {% capture sizes %}
                       (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),

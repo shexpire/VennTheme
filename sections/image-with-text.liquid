@@ -30,11 +30,77 @@
       <div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
         <div class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} image-with-text__media-item--{{ section.settings.desktop_content_position }} grid__item">
           <div
-            class="image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}{% if section.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}"
+            class="image-with-text__media image-with-text__media--{{ section.settings.height }}  global-media-settings{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}{% if section.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}"
             {% if section.settings.height == 'adapt' and section.settings.image != blank %}
               style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
             {% endif %}
           >
+            {% if section.settings.video %}
+              {{ 'video-section.css' | asset_url | stylesheet_tag }}
+              {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+              {%- liquid
+                assign video_id = section.settings.video.id | default: section.settings.video_url.id
+                assign video_alt = section.settings.video.alt | default: section.settings.description
+                assign alt = 'sections.video.load_video' | t: description: video_alt | escape
+                assign poster = section.settings.video.preview_image | default: section.settings.image
+                assign autoplay = section.settings.auto_play
+                assign mute = false
+                assign display_controls = section.settings.display_controls
+
+                if autoplay
+                  assign mute = true
+                endif
+
+                if section.settings.video != null
+                  assign ratio_diff = section.settings.video.aspect_ratio | minus: poster.aspect_ratio | abs
+                  if ratio_diff < 0.01 and ratio_diff > 0
+                    assign fix_ratio = true
+                  endif
+                endif
+              -%}
+              <deferred-media
+                class="video-section__media deferred-media gradient global-media-settings {% if fix_ratio %} media-fit-cover{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                data-media-id="{{ video_id }}"
+                data-autoplay="{% if autoplay %}true{% else %}false{% endif %}"
+                {% if poster != null %}
+                  style="--ratio-percent: {{ 1 | divided_by: poster.aspect_ratio | times: 100 }}%;"
+                {% endif %}
+              >
+                <button
+                  id="Deferred-Poster-Modal-{{ video_id }}"
+                  class="video-section__poster media deferred-media__poster media--landscape"
+                  type="button"
+                  aria-label="{{ alt }}"
+                >
+                  {%- if poster != null -%}
+                    {{
+                    poster
+                    | image_url: width: 3840
+                    | image_tag: sizes: sizes, widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt
+                    }}
+                  {%- else -%}
+                    {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                  {%- endif -%}
+                  <span class="deferred-media__poster-button motion-reduce">
+                    <span class="svg-wrapper">
+                      {{- 'icon-play.svg' | inline_asset_content -}}
+                    </span>
+                  </span>
+                </button>
+                <template>
+                    {{
+                    section.settings.video
+                    | video_tag:
+                    image_size: '1100x',
+                    autoplay: autoplay,
+                    loop: section.settings.enable_video_looping,
+                    controls: display_controls,
+                    muted: mute
+                    }}
+                </template>
+              </deferred-media>
+
+            {% else %}
             {%- if section.settings.image != blank -%}
               {%- if section.settings.image_behavior == 'ambient' or section.settings.image_behavior == 'zoom-in' -%}
                 {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
@@ -57,6 +123,7 @@
             {%- else -%}
               {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
+            {% endif %}
           </div>
         </div>
         <div class="image-with-text__text-item grid__item">
@@ -130,6 +197,30 @@
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "t:sections.image-banner.settings.video.label",
+      "info": "t:sections.image-banner.settings.video.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "t:sections.video.settings.enable_video_looping.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_play",
+      "label": "t:sections.video.settings.auto_play.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "display_controls",
+      "label": "t:sections.video.settings.display_controls.label",
+      "default": true
     },
     {
       "type": "select",

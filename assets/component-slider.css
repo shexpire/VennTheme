@@ -454,17 +454,18 @@ slider-component.slider-component-full-width {
   justify-content: center;
   margin-right: -3px;
 }
+
 .slider-counter--dot {
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  border: 1px solid rgb(var(--color-cream-border));
+  border: 1px solid rgb(var(--color-foreground));
   background: transparent;
   margin: 0;
   display: block;
 }
 .active > .slider-counter--dot {
-  background: rgb(var(--color-cream-border));
+  background: rgb(var(--color-foreground));
 }
 #cart-upsells {
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.2);
