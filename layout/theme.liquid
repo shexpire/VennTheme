@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
-    {% if request.host == 'store.venncard.com' %}<style>#redirect-overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: white;z-index: 9999;}</style><div id="redirect-overlay"></div><script>document.addEventListener('DOMContentLoaded', function() {window.location.href = 'https://venncard.com/store';});</script>{% endif %}
+    {% if request.host == 'store.venncard.com' and (request.path == '/' %}<style>#redirect-overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: white;z-index: 9999;}</style><div id="redirect-overlay"></div><script>document.addEventListener('DOMContentLoaded', function() {window.location.href = 'https://venncard.com/store';});</script>{% endif %}
     <meta name="robots" content="noindex" />
     {{content_for_header}}
   </head>
