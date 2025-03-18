@@ -543,6 +543,9 @@
       "marketing": {
         "accept_shop_pay_marketing_checkbox_label": "Sign me up for product-related news and offers",
         "accept_marketing_checkbox_label": "Sign me up for product-related news and offers"
+      },
+      "shipping": {
+        "shipping_method_title": "Shipping method, after production"
       }
     }
   },
